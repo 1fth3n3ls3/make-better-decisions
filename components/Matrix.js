@@ -1,4 +1,5 @@
 import styles from "./Matrix.module.css";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Matrix(props) {
   function getScoreInputs(criteria, criteriaId) {
@@ -9,6 +10,7 @@ export default function Matrix(props) {
           className={`${styles.criteria} ${
             isOdd ? styles.oddRow : styles.evenRow
           }`}
+          key={uuidv4()}
         >
           <input
             type="number"
@@ -25,24 +27,6 @@ export default function Matrix(props) {
   }
   function populateCriterias() {
     return props.criterias.map((criteria, criteriaId) => {
-      // return (
-      //   <ul>
-      //     <li>
-      //       {criteria.name} ({criteria.weight * 10})
-      //     </li>
-      //     {criteria.scores.map((score, index) => (
-      //       <input
-      //         type="number"
-      //         defaultValue={score}
-      //         onChange={(event) =>
-      //           props.handleScore(index, score, criteriaId, event)
-      //         }
-      //         min={0}
-      //         max={10}
-      //       />
-      //     ))}
-      //   </ul>
-      // );
       const scoreInputs = getScoreInputs(criteria, criteriaId);
       const isOdd = criteriaId % 2 !== 0;
       return [
@@ -50,6 +34,7 @@ export default function Matrix(props) {
           className={`${styles.criteria} ${
             isOdd ? styles.oddRow : styles.evenRow
           }`}
+          key={uuidv4()}
         >
           {criteria.name}
         </div>,
@@ -57,6 +42,7 @@ export default function Matrix(props) {
           className={`${styles.weight} ${
             isOdd ? styles.oddRow : styles.evenRow
           }`}
+          key={uuidv4()}
         >
           <input
             type="number"
@@ -79,20 +65,30 @@ export default function Matrix(props) {
     return Math.floor(sum);
   }
   return (
-    <div className={styles.matrix}>
-      <div className={styles.header}>Criteria</div>
-      <div className={styles.header}>Weight</div>
-      <div className={styles.header}>
+    <div className={styles.matrix} key={uuidv4()}>
+      <div className={styles.header} key={uuidv4()}>
+        Criteria
+      </div>
+      <div className={styles.header} key={uuidv4()}>
+        Weight
+      </div>
+      <div className={styles.header} key={uuidv4()}>
         <input type="text" defaultValue="Current"></input>
       </div>
-      <div className={styles.header}>
+      <div className={styles.header} key={uuidv4()}>
         <input type="text" defaultValue="Alternative"></input>
       </div>
       {populateCriterias()}
-      <div className={styles.total}>Total</div>
-      <div className={styles.total}></div>
-      <div className={styles.total}>{calculateTotal(0)}</div>
-      <div className={styles.total}>{calculateTotal(1)}</div>
+      <div className={styles.total} key={uuidv4()}>
+        Total
+      </div>
+      <div className={styles.total} key={uuidv4()}></div>
+      <div className={styles.total} key={uuidv4()}>
+        {calculateTotal(0)}
+      </div>
+      <div className={styles.total} key={uuidv4()}>
+        {calculateTotal(1)}
+      </div>
     </div>
   );
 }
