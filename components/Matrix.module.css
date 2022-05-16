@@ -1,0 +1,81 @@
+.matrix {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  background-color: white;
+  /* border-radius: 0.5rem; */
+  border: 2px solid black;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  /* gap: 1rem; */
+}
+
+.oddRow {
+  background-color: #eee;
+}
+
+.matrix > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1em; */
+  /* font-size: 2em; */
+  /* color: #ffeead; */
+}
+
+.matrix > div > input {
+  text-align: center;
+  border-style: none;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+.matrix input::-webkit-outer-spin-button,
+.matrix input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.total {
+  /* border-top: 2px solid grey; */
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #ccc;
+  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+}
+
+.header {
+  /* border-bottom: 2px solid grey; */
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+  padding-top: 1rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  background-color: rgb(115, 157, 203);
+  /* background-color: rgb(216, 216, 216); */
+}
+
+.header > input {
+  color: white;
+  font-weight: bolder;
+  width: 100%;
+}
+.header > input::placeholder {
+  color: white;
+}
+.criteria {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  /* background-color: white; */
+}
+
+.weight {
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  /* background-color: white; */
+}

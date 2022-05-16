@@ -1,0 +1,24 @@
+.form {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  /* width: 70%; */
+  align-items: center;
+}
+.form div {
+  padding-right: 1rem;
+}
+
+#addcriteria {
+  padding: 0.5rem;
+}
+
+.form input {
+  padding: 0.5rem;
+}
+.inputs {
+  display: flex;
+}

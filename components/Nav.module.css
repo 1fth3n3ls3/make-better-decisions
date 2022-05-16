@@ -1,0 +1,11 @@
+.nav h1 {
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.149);
+  color: white;
+}
+.nav {
+  background-color: rgb(115, 157, 203);
+  box-shadow: 3px 0 10px black;
+  padding: 1rem;
+}
