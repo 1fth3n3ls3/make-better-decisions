@@ -22,3 +22,8 @@
 .inputs {
   display: flex;
 }
+.footer {
+  margin: 2rem;
+  text-align: right;
+  font-size: xx-small;
+}

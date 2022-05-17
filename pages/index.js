@@ -125,7 +125,14 @@ export default function Home() {
           handleScore={handleScore}
         ></Matrix>
       </main>
-      {/* <footer className={styles.footer}>Footer</footer> */}
+      <footer className={styles.footer}>
+        <a
+          href="https://www.flaticon.com/free-icons/decision"
+          title="decision icons"
+        >
+          Decision icons created by Freepik - Flaticon
+        </a>
+      </footer>
     </div>
   );
 }
