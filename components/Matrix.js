@@ -2,6 +2,20 @@ import styles from "./Matrix.module.css";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Matrix(props) {
+  // console.log(props.alternatives);
+
+  function handleAlternatives(event) {
+    event.preventDefault();
+    const val = event.target.value;
+    const id = 0;
+    // console.log(val);
+    const newAlternatives = alternatives.map((alternative, index) => {
+      return index === id ? val : alternative;
+    });
+    // console.log(alternatives);
+    setAlternatives(newAlternatives);
+  }
+
   function getScoreInputs(criteria, criteriaId) {
     const isOdd = criteriaId % 2 !== 0;
     return criteria.scores.map((score, index) => {
@@ -72,11 +86,19 @@ export default function Matrix(props) {
       <div className={styles.header} key={uuidv4()}>
         Weight
       </div>
-      <div className={styles.header} key={uuidv4()}>
-        <input type="text" defaultValue="Current"></input>
+      <div className={styles.header} key={"sssssss"}>
+        <input
+          type="text"
+          defaultValue={props.alternatives[0]}
+          onBlur={(event) => props.handleAlternatives(event, 0)}
+        />
       </div>
-      <div className={styles.header} key={uuidv4()}>
-        <input type="text" defaultValue="Alternative"></input>
+      <div className={styles.header} key={"sddssdsdsdadsafaf"}>
+        <input
+          type="text"
+          defaultValue={props.alternatives[1]}
+          onBlur={(event) => props.handleAlternatives(event, 1)}
+        />
       </div>
       {populateCriterias()}
       <div className={styles.total} key={uuidv4()}>

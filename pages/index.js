@@ -12,7 +12,7 @@ export default function Home() {
     scores: [],
   });
   const [criterias, setCriterias] = useState([]);
-  const alternatives = ["Alternative 1", "Alternative 2"];
+  const [alternatives, setAlternatives] = useState(["Current", "Alternative"]);
 
   function handleChange(event) {
     const data = event.target;
@@ -28,6 +28,17 @@ export default function Home() {
       };
       return newValue;
     });
+  }
+
+  function handleAlternatives(event, id) {
+    event.preventDefault();
+    const val = event.target.value;
+    // console.log(val);
+    const newAlternatives = alternatives.map((alternative, index) => {
+      return index === id ? val : alternative;
+    });
+    // console.log(alternatives);
+    setAlternatives(newAlternatives);
   }
 
   function handleAddCriteria(event) {
@@ -121,8 +132,10 @@ export default function Home() {
         </form>
         <Matrix
           criterias={criterias}
+          alternatives={alternatives}
           handleWeight={handleWeight}
           handleScore={handleScore}
+          handleAlternatives={handleAlternatives}
         ></Matrix>
       </main>
       <footer className={styles.footer}>
